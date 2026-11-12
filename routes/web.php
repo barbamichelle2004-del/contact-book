@@ -1,22 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-// READ (Nagawa na natin ito)
-Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+// READ
+Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 
 // CREATE
-Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
-Route::post('/students', [StudentController::class, 'store'])->name('students.store');
+Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
+Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 
 // UPDATE
-Route::get('/students/{student}/edit', [StudentController::class, 'edit'])->name('students.edit');
-Route::put('/students/{student}', [StudentController::class, 'update'])->name('students.update');
+Route::get('/contacts/{contact}/edit', [ContactController::class, 'edit'])->name('contacts.edit');
+Route::put('/contacts/{contact}', [ContactController::class, 'update'])->name('contacts.update');
 
 // DELETE
-Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy');
+Route::delete('/contacts/{contact}', [ContactController::class, 'destroy'])->name('contacts.destroy');
